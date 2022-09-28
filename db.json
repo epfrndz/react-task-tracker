@@ -15,10 +15,10 @@
       "status": "incomplete"
     },
     {
-      "text": "Test",
-      "day": "asdfd",
+      "text": "test",
+      "day": "asdfds",
       "reminder": false,
-      "status": "incomplete",
+      "status": "complete",
       "id": 3
     }
   ]

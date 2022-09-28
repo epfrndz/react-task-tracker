@@ -65,6 +65,25 @@ function App() {
     setTasks(tasks.filter((task) => task.id !== id))
   }
 
+  // Set Task to Complete
+  const completeTask = async (id) => {
+
+    const targetTask = tasks.filter((task) => task.id === id)[0];
+    const completedTask = {...targetTask,
+      "status": "complete"
+    }
+
+    await fetch(`http://localhost:5500/tasks/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(completedTask)
+    })
+
+    setTasks(tasks.filter((task) => task.id !== id))
+  }
+
   // Toggle Reminder
   const toggleReminder = async (id) => {
     const taskToToggle = await fetchTask(id)
@@ -104,7 +123,7 @@ function App() {
               {
                 tasks.length > 0 ?
                 (
-                  <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder}/>
+                  <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} onComplete={completeTask}/>
                 ) : (
                   'No Tasks to Show'
                 )

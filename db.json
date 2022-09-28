@@ -18,8 +18,22 @@
       "text": "test",
       "day": "asdfds",
       "reminder": false,
-      "status": "incomplete",
+      "status": "complete",
       "id": 3
+    },
+    {
+      "text": "hello",
+      "day": "2",
+      "reminder": false,
+      "status": "complete",
+      "id": 4
+    },
+    {
+      "text": "hello 2",
+      "day": "3",
+      "reminder": false,
+      "status": "incomplete",
+      "id": 5
     }
   ]
 }

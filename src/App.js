@@ -15,6 +15,7 @@ function App() {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
+    console.log('this mounted')
     const getTasks = async () => {
       const tasksFromServer = await fetchTasks()
       setTasks(tasksFromServer)
@@ -165,7 +166,7 @@ function App() {
           }
         />
         <Route path='/about' element={<About />} />
-        <Route path='/completed' element={<CompletedTasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} onComplete={completeTask} onDecomplete={decompleteTask}/>} />
+        <Route path='/completed' element={<CompletedTasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} onComplete={completeTask} />} />
 
       </Routes>
       <Footer />

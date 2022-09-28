@@ -12,13 +12,13 @@
       "day": "sdfadsf",
       "reminder": true,
       "id": 2,
-      "status": "incomplete"
+      "status": "complete"
     },
     {
       "text": "test",
       "day": "asdfds",
       "reminder": false,
-      "status": "complete",
+      "status": "incomplete",
       "id": 3
     }
   ]

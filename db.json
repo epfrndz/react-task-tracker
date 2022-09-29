@@ -5,6 +5,7 @@
       "text": "Doctors Appointment",
       "day": "Feb 5th at 2:30pm",
       "reminder": true,
+      "decompleted": false,
       "status": "incomplete"
     },
     {
@@ -12,6 +13,7 @@
       "day": "sdfadsf",
       "reminder": true,
       "id": 2,
+      "decompleted": false,
       "status": "complete"
     },
     {
@@ -19,6 +21,7 @@
       "day": "asdfds",
       "reminder": false,
       "status": "complete",
+      "decompleted": false,
       "id": 3
     },
     {
@@ -26,6 +29,7 @@
       "day": "2",
       "reminder": false,
       "status": "complete",
+      "decompleted": false,
       "id": 4
     },
     {
@@ -33,7 +37,16 @@
       "day": "3",
       "reminder": false,
       "status": "incomplete",
+      "decompleted": false,
       "id": 5
+    },
+    {
+      "text": "Test Decompleted Status",
+      "day": "Test",
+      "reminder": false,
+      "status": "incomplete",
+      "decompleted": true,
+      "id": 6
     }
   ]
 }

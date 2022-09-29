@@ -6,6 +6,7 @@ const AddTask = ({ onAdd }) => {
   const [day, setDay] = useState('')
   const [reminder, setReminder] = useState(false)
   const [status, setStatus] = useState("incomplete")
+  const decompleted = false
 
   const onSubmit = e => {
     e.preventDefault()
@@ -14,7 +15,7 @@ const AddTask = ({ onAdd }) => {
       return
     }
 
-    onAdd({ text, day, reminder, status })
+    onAdd({ text, day, reminder, status, decompleted })
     setText('')
     setDay('')
     setReminder(false)

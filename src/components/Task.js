@@ -1,7 +1,12 @@
 import { FaTimes, FaCheck } from "react-icons/fa";
+import { VscDebugRestart } from "react-icons/vsc";
+import { useLocation } from 'react-router-dom';
+import Button from './Button';
 import React from "react";
 
 const Task = ({ task, onDelete, onToggle, onComplete, onDecomplete }) => {
+  const location = useLocation()
+
   return (
     <div
       className={`task ${task.reminder ? "reminder" : ""}`}
@@ -15,7 +20,9 @@ const Task = ({ task, onDelete, onToggle, onComplete, onDecomplete }) => {
         />
       </h3>
       <p>{task.day}</p>
-      <button
+      <Button
+        color={"steelblue"}
+        text={task.status === "complete" ? "Mark Incomplete" : "Mark Complete"}
         onClick={() => {
           if (task.status === "complete") {
             onDecomplete(task.id);
@@ -23,15 +30,18 @@ const Task = ({ task, onDelete, onToggle, onComplete, onDecomplete }) => {
             onComplete(task.id);
           }
         }}
+      />
+      <div
+        style={{display: "flex", "flex-flow": "row-reverse"}}
       >
-        Mark {task.status === "complete" ? "Incomplete" : "Complete"}
-      </button>
-      <div>
         {task.status === "complete" ? (
           <FaCheck style={{ color: "green" }}></FaCheck>
         ) : (
           ""
         )}
+        {location.pathname === "/" && task.decompleted === true && 
+          <VscDebugRestart style={{color: "lightblue"}}></VscDebugRestart>
+        }
       </div>
     </div>
   );

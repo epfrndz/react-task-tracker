@@ -6,7 +6,7 @@
       "day": "Feb 5th at 2:30pm",
       "reminder": true,
       "decompleted": false,
-      "status": "incomplete"
+      "status": "complete"
     },
     {
       "text": "sdfasdf",
@@ -28,8 +28,8 @@
       "text": "hello",
       "day": "2",
       "reminder": false,
-      "status": "complete",
-      "decompleted": false,
+      "status": "incomplete",
+      "decompleted": true,
       "id": 4
     },
     {
@@ -44,7 +44,7 @@
       "text": "Test Decompleted Status",
       "day": "Test",
       "reminder": false,
-      "status": "incomplete",
+      "status": "complete",
       "decompleted": true,
       "id": 6
     }

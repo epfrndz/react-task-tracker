@@ -104,9 +104,10 @@ function App() {
   // Decomplete Task
   const decompleteTask = async (id) => {
     const targetTask = tasks.filter((task) => task.id === id)[0];
-    const decompletedTask = { ...targetTask, 
+    const decompletedTask = {
+      ...targetTask,
       status: "incomplete",
-      decompleted: true
+      decompleted: true,
     };
 
     await fetch(`http://localhost:5500/tasks/${id}`, {
@@ -116,8 +117,7 @@ function App() {
       },
       body: JSON.stringify(decompletedTask),
     });
-    // debugger;
-    // setTasks(tasks.filter((task) => task.id !== id));
+
     setTasks(
       tasks.map((task) =>
         task.id === id ? { ...task, status: "incomplete" } : task

@@ -1,11 +1,11 @@
 import { FaTimes, FaCheck } from "react-icons/fa";
-import { VscDebugRestart } from "react-icons/vsc";
-import { useLocation } from 'react-router-dom';
-import Button from './Button';
+import { VscRefresh, VscChromeClose } from "react-icons/vsc";
+import { useLocation } from "react-router-dom";
+import Button from "./Button";
 import React from "react";
 
 const Task = ({ task, onDelete, onToggle, onComplete, onDecomplete }) => {
-  const location = useLocation()
+  const location = useLocation();
 
   return (
     <div
@@ -14,34 +14,36 @@ const Task = ({ task, onDelete, onToggle, onComplete, onDecomplete }) => {
     >
       <h3>
         {task.text}
-        <FaTimes
-          style={{ color: "red", cursor: "pointer" }}
+        <VscChromeClose
+          style={{ color: "#ff7260", cursor: "pointer" }}
           onClick={() => onDelete(task.id)}
         />
       </h3>
       <p>{task.day}</p>
-      <Button
-        color={"steelblue"}
-        text={task.status === "complete" ? "Mark Incomplete" : "Mark Complete"}
-        onClick={() => {
-          if (task.status === "complete") {
-            onDecomplete(task.id);
-          } else {
-            onComplete(task.id);
+      <div className="task-footer">
+        <Button
+          color={"#AA99FF"}
+          text={
+            task.status === "complete" ? "Mark Incomplete" : "Mark Complete"
           }
-        }}
-      />
-      <div
-        style={{display: "flex", "flex-flow": "row-reverse"}}
-      >
-        {task.status === "complete" ? (
-          <FaCheck style={{ color: "green" }}></FaCheck>
-        ) : (
-          ""
-        )}
-        {location.pathname === "/" && task.decompleted === true && 
-          <VscDebugRestart style={{color: "lightblue"}}></VscDebugRestart>
-        }
+          onClick={() => {
+            if (task.status === "complete") {
+              onDecomplete(task.id);
+            } else {
+              onComplete(task.id);
+            }
+          }}
+        />
+        <div style={{ display: "flex", "flex-flow": "row-reverse" }}>
+          {task.status === "complete" ? (
+            <FaCheck style={{ color: "green" }}></FaCheck>
+          ) : (
+            ""
+          )}
+          {location.pathname === "/" && task.decompleted === true && (
+            <VscRefresh style={{ color: "lightblue" }}></VscRefresh>
+          )}
+        </div>
       </div>
     </div>
   );

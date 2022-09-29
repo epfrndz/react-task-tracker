@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 
 .centered {
   justify-content: center; /* center items horizontally, in this case */
-  align-items: center;     /* center items vertically, in this case */
+  align-items: center; /* center items vertically, in this case */
   display: flex;
 }
 
@@ -11,21 +11,24 @@ h4 {
   color: white;
 }
 
+p {
+  color: #9398a1;
+  text-transform: capitalize;
+}
+
 .sun {
-  display:flex;
+  display: flex;
   justify-content: center; /* center items horizontally, in this case */
-  align-items: center;     /* center items vertically, in this case */
-  border-radius:50%;
-  height:200px;
-  width:200px;
+  align-items: center; /* center items vertically, in this case */
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
   right: 100px;
-  background:orange;
-  box-shadow: 0 0 10px orange,
-                0 0 60px orange,
-                0 0 200px yellow,
-                inset 0 0 80px yellow;
-  z-index:12;
-  z-index:-99;
+  background: orange;
+  box-shadow: 0 0 10px orange, 0 0 60px orange, 0 0 200px yellow,
+    inset 0 0 80px yellow;
+  z-index: 12;
+  z-index: -99;
 }
 
 * {
@@ -36,29 +39,27 @@ h4 {
 
 /* sources https://unsplash.com/photos/c9OCWLka764 */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   min-height: 100vh;
-  background-image: url('./imgs/paul-volkmer-qVotvbsuM_c-unsplash.jpeg');
+  background-image: url("./imgs/paul-volkmer-qVotvbsuM_c-unsplash.jpeg");
+  /* background-color: #5d6371; */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 250vh 100vh;
-
-  
 }
 
 .container {
-  max-width: 66vh;
+  width: 66vh;
   margin: 1px auto;
   overflow: auto;
   min-height: 300px;
-  border: 1px solid steelblue;
-  padding: 1px;
-  border-radius: 5px;
-  background-color: #313133a4;
+  padding: 1.5rem;
+  border-radius: 20px;
+  background-color: #313642;
 }
 
 .header {
@@ -75,7 +76,7 @@ body {
   border: none;
   padding: 10px 20px;
   margin: 5px;
-  border-radius: 5px;
+  border-radius: 50rem;
   cursor: pointer;
   text-decoration: none;
   font-size: 15px;
@@ -93,17 +94,45 @@ body {
 .btn-block {
   display: block;
   width: 100%;
+  background-color: #aa99ff;
+}
+
+.btn-icon {
+  display: block;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  border: 1px solid #ff7260;
+  position: relative;
+}
+
+.btn-icon svg {
+  position: absolute;
+  left: 21%;
+  bottom: 21%;
 }
 
 .task {
-  background: #f4f4f431;
-  margin: 5px;
+  background: #3f4553;
+  margin-bottom: 1rem;
   padding: 10px 20px;
   cursor: pointer;
+  border-radius: 10px;
+}
+
+.task-footer {
+  justify-content: space-between;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.task-footer svg {
+  font-size: 1.2rem;
 }
 
 .task.reminder {
-  border-left: 5px solid green;
+  border-left: 5px solid #b2d198;
 }
 
 .task h3 {
@@ -130,6 +159,11 @@ body {
   margin: 5px;
   padding: 3px 7px;
   font-size: 17px;
+  background: #3f4553;
+  border: none;
+  border-radius: 5px;
+  outline: #ffffffb5;
+  color: #fff;
 }
 
 .form-control-check {
@@ -152,11 +186,21 @@ footer {
   text-align: center;
 }
 
-footer a {
-  padding-right: 0.65rem;
+footer p {
+  margin-top: 0.5rem;
 }
 
-.image{
+footer a {
+  padding: 0 1.5rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+footer a:hover {
+  color: #ff7260;
+}
+
+.image {
   height: auto;
   width: auto;
   max-width: 50%;
@@ -236,152 +280,156 @@ li:nth-child(7) {
   box-shadow: inset 2.4px -0.8px 0 0px #414043;
 }
 
-.p{
+.p {
   z-index: -1;
-  position:fixed;
-  left:0px;
-  top:50px;
-  width:1px;
-  height:1px;
-  background-color:white;
-  position:fixed;
-  animation-name:particleAnimation;
+  position: fixed;
+  left: 0px;
+  top: 50px;
+  width: 1px;
+  height: 1px;
+  background-color: white;
+  position: fixed;
+  animation-name: particleAnimation;
   animation-timing-function: infinite;
   animation-iteration-count: infinite;
   -ms-transform: rotate(20deg); /* IE 9 */
   transform: rotate(20deg);
 }
-.p::before{
-  position:absolute;
-  display:block;
-  content:"";
-  width:100px;
-  right:1px;
-  top:0px;
-  height:1px;
-  background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(255,255,255,0.4) 100%); 
+.p::before {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100px;
+  right: 1px;
+  top: 0px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(255, 255, 255, 0.4) 100%
+  );
 }
-.p-1{
-  animation-duration:20s;
+.p-1 {
+  animation-duration: 20s;
   left: 10%;
 }
-.p-2{
-  animation-duration:10s;
-  top:60%;
+.p-2 {
+  animation-duration: 10s;
+  top: 60%;
   left: 40%;
 }
-.p-3{
-  animation-duration:40s;
-  top:90%;
+.p-3 {
+  animation-duration: 40s;
+  top: 90%;
   left: 60%;
 }
 
-.p-4{
-  animation-duration:15s;
+.p-4 {
+  animation-duration: 15s;
   left: 25%;
 }
-.p-5{
-  animation-duration:11s;
-  top:30%;
+.p-5 {
+  animation-duration: 11s;
+  top: 30%;
   left: 20%;
 }
-.p-6{
-  animation-duration:50s;
-  top:33%;
+.p-6 {
+  animation-duration: 50s;
+  top: 33%;
   left: 10%;
 }
 
-.p-7{
-  animation-duration:5s;
+.p-7 {
+  animation-duration: 5s;
   left: 50%;
 }
-.p-8{
-  animation-duration:3s;
-  top:10%;
+.p-8 {
+  animation-duration: 3s;
+  top: 10%;
   left: 30%;
 }
-.p-9{
-  animation-duration:11s;
-  top:40%;
+.p-9 {
+  animation-duration: 11s;
+  top: 40%;
   left: 60%;
 }
 
-.p-11{
-  animation-duration:7s;
+.p-11 {
+  animation-duration: 7s;
   left: 10%;
 }
-.p-21{
-  animation-duration:5s;
-  top:60%;
+.p-21 {
+  animation-duration: 5s;
+  top: 60%;
   left: 40%;
 }
-.p-31{
-  animation-duration:11s;
-  top:90%;
+.p-31 {
+  animation-duration: 11s;
+  top: 90%;
   left: 60%;
 }
 
-.p-41{
-  animation-duration:4s;
+.p-41 {
+  animation-duration: 4s;
   left: 25%;
 }
-.p-51{
-  animation-duration:2s;
-  top:30%;
+.p-51 {
+  animation-duration: 2s;
+  top: 30%;
   left: 20%;
 }
-.p-61{
-  animation-duration:1s;
-  top:33%;
+.p-61 {
+  animation-duration: 1s;
+  top: 33%;
   left: 10%;
 }
 
-.p-71{
-  animation-duration:4s;
+.p-71 {
+  animation-duration: 4s;
   left: 50%;
 }
-.p-81{
-  animation-duration:1s;
-  top:10%;
+.p-81 {
+  animation-duration: 1s;
+  top: 10%;
   left: 30%;
 }
-.p-91{
-  animation-duration:4s;
-  top:40%;
+.p-91 {
+  animation-duration: 4s;
+  top: 40%;
   left: 60%;
 }
 
-h1,h3,p,label {
+h1,
+h3,
+label {
   color: whitesmoke;
+  text-transform: capitalize;
 }
 
-@keyframes particleAnimation
-{
-    from {
-        top: -100px;
-    }
-  
+@keyframes particleAnimation {
+  from {
+    top: -100px;
+  }
+
   50% {
     transform: translateY(500px);
   }
-    to {
-        left: calc( 100% + 100px );
-        top: calc( 100% + 100px );
-    }
+  to {
+    left: calc(100% + 100px);
+    top: calc(100% + 100px);
+  }
 }
 
-@keyframes tothetop
-{
-  
+@keyframes tothetop {
   from {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  min-height: 100vh;
-  background: #0c0c2b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #0c0c2b;
   }
-  
+
   to {
     display: block;
     align-items: none;
@@ -391,12 +439,11 @@ h1,h3,p,label {
   }
 }
 
-@keyframes moonanim
-{
+@keyframes moonanim {
   from {
     top: -50vh;
   }
-  
+
   to {
     top: 0;
   }
@@ -407,7 +454,7 @@ h1,h3,p,label {
   font-family: Sail;
 }
 
-img{
+img {
   -webkit-user-drag: none;
   user-select: none;
   -moz-user-select: none;
@@ -423,22 +470,20 @@ img{
   
 } */
 
-.background-fullviewport{
+.background-fullviewport {
   right: -50vh;
   width: 100vh;
   padding: 20px;
   height: 0;
-
 }
 
-h1{
+h1 {
   padding: 1vh;
 }
 
 @media screen and (max-width: 992px) {
-
 }
 
-#logo{
+#logo {
   max-height: 100px;
 }
